@@ -94,12 +94,12 @@ if($_GET["pro"]=="ubah"){
   <div>
 
 
-    <form name="import_export_form" method="post" action="" enctype="multipart/form-data">
+  <!-- <form name="import_export_form" method="post" action="" enctype="multipart/form-data">
     <label>Select Excel File : </label><input type="file" name="excelfile"/><br>
     <input type="submit" name="form_submit"/>
     </form>
 	
-	<hr>
+	<hr> -->
 <form action="" method="post" enctype="multipart/form-data">
 <table width="464">
 
@@ -166,13 +166,13 @@ if($_GET["pro"]=="ubah"){
 <tr>
 <td height="43"><label for="gaji">Gaji</label>
 <td>:
-<td><input class="form-control" name="c2" type="text" id="gaji" value="<?php echo $gaji;?>" size="30" />
+<td><input class="form-control" name="c2" type="text" id="c2" value="<?php echo $gaji;?>" size="30" />
 </tr>
 
 <tr>
 <td height="43"><label for="tanggungan">Tanggungan</label>
 <td>:
-<td><input class="form-control" name="c3" type="text" id="tanggungan" value="<?php echo $tanggungan;?>" size="30" />
+<td><input class="form-control" name="c3" type="text" id="c3" value="<?php echo $tanggungan;?>" size="30" />
 </tr>
 <tr>
 <td><label for="rumah">Rumah</label>
@@ -342,23 +342,24 @@ if(isset($_POST["Simpan"])){
 	$password=strip_tags($_POST["password"]);
 
 if($pro=="simpan"){
-$sql="INSERT INTO `tb_pemohon`(
-`id_pemohon`, 
-`nama_pemohon`,
-`jenis_kelamin`, 
-`tlp`, 
-`email`, 
-`alamat`, 
+$sql=" INSERT INTO `$tbpemohon` (
+`id_pemohon` ,
+`nama_pemohon` ,
+`jenis_kelamin` ,
+`tlp` ,
+`email` ,
+`alamat`,
+`no_kk`,
 `c1`,
-`c2,
+`c2`,
 `c3`,
 `c4`,
 `c5`,
 `username`,
 `password`
 ) VALUES (
-'$id_pemohon', 
-'$nama_pemohon',
+'$id_pemohon',
+'$nama_pemohon', 
 '$jenis_kelamin', 
 '$tlp',
 '$email',
@@ -372,7 +373,6 @@ $sql="INSERT INTO `tb_pemohon`(
 '$username',
 '$password'
 )";
-	
 $simpan=process($conn,$sql);
 		if($simpan) {echo "<script>alert('Data $id_pemohon berhasil disimpan !');document.location.href='?mnu=pemohon';</script>";}
 		else{echo"<script>alert('Data $id_pemohon gagal disimpan...');document.location.href='?mnu=pemohon';</script>";}
@@ -412,7 +412,7 @@ else{echo"<script>alert('Data pemohon $id_pemohon gagal dihapus...');document.lo
 
 
 
-<?php
+<!-- <?php
  if(isset($_POST['form_submit'])){
 		require_once 'Excel/reader.php';
 		$data = new Spreadsheet_Excel_Reader();
@@ -465,7 +465,7 @@ else{echo"<script>alert('Data pemohon $id_pemohon gagal dihapus...');document.lo
 			$c3= $data->sheets[0]["cells"][$x][9];
 			$c4= $data->sheets[0]["cells"][$x][10];
 			
-			$c5= $data->sheets[0]["cells"][$x][1];
+			$c5= $data->sheets[0]["cells"][$x][11];
 			
 			
 			$username= "";
@@ -509,4 +509,4 @@ $simpan=process($conn,$sql);
  echo"<script>alert('Import data sebanyak $ada berhasil...');document.location.href='?mnu=pemohon';</script>";
  
  }
-?>
+?> -->

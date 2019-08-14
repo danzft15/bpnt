@@ -1,5 +1,3 @@
-
-
 <link rel="stylesheet" href="js/jquery-ui.css">
 <link rel="stylesheet" href="resources/demos/style.css">
 <script src="js/jquery-1.12.4.js"></script>

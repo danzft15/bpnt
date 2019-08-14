@@ -191,7 +191,7 @@ echo $gab1;
 
 $lop=0;
 $E=0.01;
-$maxIter=4;//10
+$maxIter=10;//10
 $ARP[0]=0;
 $ep=0;
 

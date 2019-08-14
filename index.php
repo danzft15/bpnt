@@ -71,13 +71,12 @@ if(!isset($_SESSION["cid"])){
        
 <?php if($_SESSION["cstatus"]=="Petugas"){  ?>
       
-        <li ><a  href="index.php?mnu=home"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
         <li ><a  href="index.php?mnu=user"><i class="fa fa-child"></i><span>Petugas</span></a></li>
         <li ><a  href="index.php?mnu=pemohon"><i class="fa fa-child"></i><span>Pemohon</span></a></li>
         <li ><a  href="index.php?mnu=penilaian"><i class="fa fa-file-powerpoint-o"></i><span>Penilaian</span></a></li>
         <li ><a  href="index.php?mnu=hasil"><i class="fa fa-file-text-o"></i><span>Hasil</span></a></li>
     <?php }elseif($_SESSION["cstatus"]=="Pemohon"){?>  
-        <li ><a  href="index.php?mnu=home"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+        <!-- <li ><a  href="index.php?mnu=home"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li> -->
         <li ><a  href="index.php?mnu=profil"><i class="fa fa-child"></i><span>Data Diri</span></a></li>
         <li ><a  href="index.php?mnu=chasil"><i class="fa fa-child"></i><span>Hasil Permohonan</span></a></li>
        
